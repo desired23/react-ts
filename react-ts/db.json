@@ -1,0 +1,73 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 100,
+      "image": "https://www.computerhope.com/jargon/h/img.png",
+      "description": "mo ta",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Product 2 updated",
+      "price": 200,
+      "image": "https://www.computerhope.com/jargon/h/img.png",
+      "description": "mo ta2",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 300,
+      "image": "https://www.computerhope.com/jargon/h/img.png",
+      "description": "mo ta3",
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "price": 400,
+      "image": "https://www.computerhope.com/jargon/h/img.png",
+      "description": "mo ta4",
+      "categoryId": 2
+    },
+    {
+      "name": "New Product",
+      "description": "MOta 001",
+      "price": "20000",
+      "Image": "img.image",
+      "categoryId": 1,
+      "id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "cate",
+      "description": "mo ta"
+    },
+    {
+      "id": 2,
+      "name": "cate2",
+      "description": "mo ta2"
+    },
+    {
+      "id": 3,
+      "name": "cate3",
+      "description": "mo ta3"
+    },
+    {
+      "id": 4,
+      "name": "cate4",
+      "description": "mo ta4"
+    }
+  ],
+  "users": [
+    {
+      "username": "huyda",
+      "password": "3424243",
+      "id": 1
+    }
+  ]
+}
