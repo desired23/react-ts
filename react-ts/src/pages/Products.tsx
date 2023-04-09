@@ -3,7 +3,7 @@ import { IProduct } from '../types/product'
 
 interface IProps { // định nghĩa kiểu dữ liệu cho props truyền vào component
     products: IProduct[],
-    onRemove: (id:number) => void // định nghĩa kiểu dữ liệu cho mảng products 
+
 }
 const Products = (props:IProps) => {
     const [data, setData] = useState<IProduct[]>([]) //khởi taọ state data với kiểu dữ liệu của data là mảng IProduct
@@ -11,14 +11,12 @@ const Products = (props:IProps) => {
         console.log(props)
         setData(props.products)
     }, [props])
-    function removeProduct(id:number) {
-        props.onRemove(id);
-    } 
+
   return (
     <div>
         {data.map(item => {
             return (
-                <div key={item.id}>
+                <div key={item._id}>
                     <h3>{item.name}</h3>
                     <h5>{item.price}</h5>
                     <h5>{item.description}</h5>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 interface DataType {
   key: string | number
-  id: number,
+  _id: string,
   name: string,
   price: number,
   image: string,
@@ -17,11 +17,11 @@ interface DataType {
 }
 interface IProps {
   products: IProduct[],
-  onRemove: (id: number) => void
+  onRemove: (id: string) => void
 }
 
 const ProductManagement = (props: IProps) => {
-  const onRemove = (id: number) => props.onRemove(id)
+  const onRemove = (id: string) => props.onRemove(id)
 
   const columns: ColumnsType<DataType> = [
     {
@@ -57,7 +57,7 @@ const ProductManagement = (props: IProps) => {
       render: (record) => (
 
         <Space size="middle">
-          <Button type="primary" style={{ backgroundColor: 'red' }} onClick={() => onRemove(record.id)}>Remove</Button>
+          <Button type="primary" style={{ backgroundColor: 'red' }} onClick={() => onRemove(record._id)}>Remove</Button>
           <Button type="primary" ><Link to={`/admin/products/${record.id}/update`}>Update</Link></Button>
         </Space>
       ),
@@ -65,7 +65,7 @@ const ProductManagement = (props: IProps) => {
   ]
   const data: DataType[] = props.products.map((item: IProduct) => {
     return {
-        key: item.id,
+        key: item._id,
         ...item
     }
 })

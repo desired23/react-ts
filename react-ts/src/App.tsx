@@ -16,6 +16,7 @@ import ULayout from './pages/layout/Layout'
 import SignUp from './pages/SignUp'
 import { IUser } from './types/user'
 import { addUser, getAllUsers } from './api/user'
+import SignIn from './pages/Signin'
 
 
 
@@ -24,13 +25,15 @@ import { addUser, getAllUsers } from './api/user'
 function App() {
   const [data, setData] = useState<IProduct[]>([])
   const [cate, setCate] = useState<ICategory[]>([])
+  // const [user, setUser] = useState<IUser[]>([])
 
   useEffect(() => {
     getAllProduct().then(({data})=>setData(data));
-    getAllCategory().then(({data})=>setCate(data));
+    getAllCategory().then(({data})=>setCate(data.datas));
+    // getAllUsers().then(({ data }) => setUser(data))
   },[]);
-  const onHandleRemove = (id: number) => {
-    delProduct(id).then(() => setData(data.filter((item: IProduct) => item.id !== id)))
+  const onHandleRemove = (id: string) => {
+    delProduct(id).then(() => setData(data.filter((item: IProduct) => item._id !== id)))
   }
   const onHandleAdd = (newItem: IProduct)  => {
     addProduct(newItem).then(() => getAllProduct().then(({data})=>setData(data)))
@@ -41,16 +44,20 @@ function App() {
   const onHandleSignUp = (obj: IUser) => {
     addUser(obj)
   }
+  const onHandleSignIn = (obj: IUser) => {
+    
+  }
   return (
     <div className='app'>
       <Routes>
         <Route path='/' element ={<ULayout/>}>
           <Route index element={<HomePage />} />
-          <Route path='products' element={<Products products={data} onRemove={onHandleRemove} />} />
+          <Route path='products' element={<Products products={data}  />} />
           <Route path='products/:id' element={<ProductDetail products={data} />} />
           
         </Route>
         <Route path='signup' element={<SignUp onSignUp={onHandleSignUp}/>}/>
+        <Route path='signin' element={<SignIn onSignIn={onHandleSignIn} />}/>
         <Route path='/admin'>
           <Route index element={<Dashboard />} />
           <Route path='products'>

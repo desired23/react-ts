@@ -86,7 +86,7 @@ const UpdateProduct = (props: IProps) => {
         <Form.Item
           label="Images"
           name="image"
-          rules={[{ message: 'Please input your Image!' }]}
+          rules={[{required:true, message: 'Please input your Image!' }]}
         >
           <Input />
         </Form.Item>

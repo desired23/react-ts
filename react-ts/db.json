@@ -38,7 +38,8 @@
       "price": "20000",
       "Image": "img.image",
       "categoryId": 1,
-      "id": 6
+      "id": 6,
+      "image": "12343424"
     }
   ],
   "categories": [
@@ -68,6 +69,37 @@
       "username": "huyda",
       "password": "3424243",
       "id": 1
+    },
+    {
+      "username": "huyda",
+      "password": "12345",
+      "email": "huydang@gmail.com",
+      "role": 1,
+      "id": 2
+    },
+    {
+      "username": "admin",
+      "password": "1",
+      "email": "admin@email.com",
+      "role": 1,
+      "id": 3
+    },
+    {
+      "username": "admin",
+      "password": "3123123",
+      "email": "huy@h.cc",
+      "role": 1,
+      "id": 4
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin"
+    },
+    {
+      "id": 2,
+      "name": "user"
     }
   ]
 }

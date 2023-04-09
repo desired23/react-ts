@@ -10,7 +10,7 @@ interface IProps {
   onAdd: (product: IProduct) => void
 }
 const AddProduct = (props: IProps) => {
-  
+  console.log(props.categories)
   const navigate = useNavigate()
   const onFinish = (values: any) => {
     props.onAdd(values);
@@ -57,7 +57,7 @@ const AddProduct = (props: IProps) => {
 
         <Form.Item
           label="Images"
-          name="Image"
+          name="image"
           rules={[{  message: 'Please input your Image!' }]}
         >
           <Input />
@@ -69,7 +69,7 @@ const AddProduct = (props: IProps) => {
           rules={[{ required: true, message: 'Please select your Product Category!' }]}
         >
           <Select>
-            {props.categories.map(item => <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>)}
+            {props.categories.map(item => <Select.Option key={item._id} value={item._id}>{item.name}</Select.Option>)}
             
 
           </Select>
